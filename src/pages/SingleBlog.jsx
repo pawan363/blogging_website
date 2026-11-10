@@ -104,7 +104,13 @@ function SingleBlog() {
         <h1>{blog.title}</h1>
       </div>
 
-      <img src={`http://localhost:5000/uploads/${blog.image}`} alt={blog.title} className="single-blog-hero-image" />
+      {blog.image && (
+        <img
+          src={`http://localhost:5000/uploads/${encodeURIComponent(blog.image)}`}
+          alt={blog.title}
+          className="single-blog-hero-image"
+        />
+      )}
       <div
         className="single-blog-content ql-editor"
         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content, { USE_PROFILES: { html: true } }) }}

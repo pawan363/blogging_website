@@ -3,7 +3,8 @@ dist/
 .env
 .env.*
 !.env.example
-blog.db
-blog.db-shm
-blog.db-wal
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
 uploads/
